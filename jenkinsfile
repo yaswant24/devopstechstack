@@ -14,14 +14,8 @@ pipeline {
         }
          stage('approval') {
             steps {
-                input("Deploy to production?")
-                    {
-
-                 message "do you want to deploy to production?"
-                 submitterParameter 'Approver'
-
-
-                       }
+                input("Deploy to production?"
+                    { message "do you want to deploy to production?" submitterParameter 'Approver'})
             }
         }
         stage('deploy') {
